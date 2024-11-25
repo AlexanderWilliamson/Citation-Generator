@@ -1,8 +1,12 @@
 {
 	"manifest_version": 3,
-	"name": "Auto Website Citater",
+	"name": "Citation Generator",
 	"description": "Uses Google Gemini's API to cite websites in MLA and/or APA format.",
-	"version": "0.3.0",
+	"version": "1.0.0",
+	"icons": {
+		"32": "icon-32.png",
+		"48": "icon-32.png"
+	},
 	"action":{
 		"default_popup": "popup.html"
 	},

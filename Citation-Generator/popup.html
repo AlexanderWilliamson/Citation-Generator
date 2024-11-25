@@ -2,12 +2,81 @@
 <html>
 <head>
 	<title>My extension</title>
+	<style>
+		.switch {
+		  position: relative;
+		  display: inline-block;
+		  width: 60px;
+		  height: 20px;
+		  float: right;
+		}
+
+		.switch input {
+		  opacity: 0;
+		  width: 0;
+		  height: 0;
+		}
+
+		.slider {
+		  position: absolute;
+		  cursor: pointer;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: #ccc;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		  border-radius: 34px;
+		}
+
+		.slider:before {
+		  position: absolute;
+		  content: "";
+		  height: 12px;
+		  width: 12px;
+		  left: 4px;
+		  bottom: 4px;
+		  background-color: white;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		  border-radius: 50%;
+		}
+
+		input:checked + .slider {
+		  background-color: #2196F3;
+		}
+
+		input:focus + .slider {
+		  box-shadow: 0 0 1px #2196F3;
+		}
+
+		input:checked + .slider:before {
+		  -webkit-transform: translateX(40px);
+		  -ms-transform: translateX(40px);
+		  transform: translateX(40px);
+		}
+	</style>
 </head>
 <body style="min-width:28em;">
-	<h1 style="text-align:center;">AI Website Citation Generator</h1>
+	<h1 style="text-align:center;">Citation Generator</h1>
 	<div style="display:flex; justify-content:center; width:100%; gap:0.5em;">
 		<input id="apikeyInput" type="password" size="33em" style="display:inline-block;">
 		<button id="button" style="display:inline-block;">Submit</button>
+	</div><br>
+	<div style="display: flex; justify-content: space-between; align-items: center;">
+		<p style="display:inline-block; font-size:15px;"><b>APA Citations:</b></p>
+		<label class="switch">
+		  <input type="checkbox" id = "apacitationswitch">
+		  <span class="slider"></span>
+		</label>
+	</div>
+	<div style="display: flex; justify-content: space-between; align-items: center;">
+		<p style="display:inline-block; font-size:15px;"><b>MLA Citations:</b></p>
+		<label class="switch">
+		  <input type="checkbox" id = "mlacitationswitch">
+		  <span class="slider"></span>
+		</label>
 	</div><br>
 	<a href="https://aistudio.google.com/app/apikey" style="display:block; text-align:center;">https://aistudio.google.com/app/apikey</a>
 	<p style="text-align:center;">Use the above link to get an api key, then simply paste it into the box and hit submit. By default using the api key is free of charge, as of 2024-11-19.</p>
