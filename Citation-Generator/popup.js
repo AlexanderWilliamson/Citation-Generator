@@ -9,7 +9,11 @@ document.getElementById("button").addEventListener("click", (evt) =>{
 	if (!/^aiza.+$/i.test(apikeyInput.value))
 		return;
 	
-	chrome.storage.local.set({"gemini-api-key":apikeyInput.value});
+	if (apikeyInput.value == "aizadelete")
+		chrome.storage.local.remove("gemini-api-key");
+	else
+		chrome.storage.local.set({"gemini-api-key":apikeyInput.value});
+	
 	apikeyInput.value = "";
 	apikeyInput.placeholder = "(Optional) Update Google Gemini API key";
 });

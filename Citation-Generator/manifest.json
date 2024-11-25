@@ -11,6 +11,9 @@
 		"default_popup": "popup.html"
 	},
 	"permissions": ["activeTab", "scripting", "storage"],
+	"host_permissions": [
+		"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=*"
+	],
 	"background":{
 		"service_worker": "service-worker.js"
 	},
